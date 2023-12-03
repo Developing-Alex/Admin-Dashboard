@@ -22,3 +22,12 @@
   grid-area: main-content;
   background-color: #f5f5f4;
 }
+
+.dashboard img {
+  filter: invert(100%);
+}
+
+.nav ul li img {
+  filter: invert(100%);
+
+}
