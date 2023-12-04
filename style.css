@@ -7,8 +7,8 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 6fr;
-  grid-template-rows: 1fr 8fr;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 10fr;
   grid-template-areas: 
   "sidebar header"
   "sidbar main-content";
@@ -17,15 +17,15 @@ body {
 .header {
   grid-area: header;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-template-areas: 
-  "search-bar notifications"
-  "greeting share-interactions";
+  "search-bar notification"
+  "user share-interactions";
   box-shadow: 0 4px 3px -2px rgba(128, 128, 128, 0.302);
   border-radius: 3px;
-  padding: 20px;
-
-}
+  padding-left: 40px;
+  padding-right: 40px;
+  }
 
 .sidebar {
   grid-area: sidebar;
@@ -60,19 +60,83 @@ body {
 }
 
 .notification {
-  grid-area: notifications;
+  grid-area: notification;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
   gap: 25px;
   font-weight: bold;
 }
 
-#traveler1 {
+.greet-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user {
+  grid-area: user;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#username {
+  margin: 0;
+}
+
+#hello {
+  margin: 0;
+}
+
+#user-avatar1 {
+  border-radius: 50px;
   width: 50px;
-  border-radius: 25px;
+}
+
+.share-interactions {
+  grid-area: share-interactions;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.share-interactions ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.share-interactions ul li button {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: #3f621220;
+}
+
+.share-interactions ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#message-bubble {
+  transform: scale(-1,1);
+}
+
+#user-avatar2 {
+  border-radius: 50px;
+  height: 75px;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 #sidebar-heading {
@@ -112,7 +176,7 @@ h1 {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
 
 .nav ul li {
