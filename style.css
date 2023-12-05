@@ -237,6 +237,8 @@ h1 {
 }
 
 .aside {
+  display: flex;
+  flex-direction: column;
   grid-area: aside;
 }
 
@@ -278,4 +280,55 @@ h1 {
 
 .announcements-card li p {
   margin-top: 0;
+}
+
+.trending {
+  display: grid;
+  grid-template-areas: 
+  "drum-machine ."
+  "groovebox-sampler ."
+  "groovebox-music ."
+  "midi .";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(4 , 1fr);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.music-boxes {
+  border-radius: 25px;
+}
+
+img #drum-machine {
+  grid-area: drum-machine;
+}
+
+img #groovebox-sampler {
+  grid-area: groovebox-sampler;
+}
+
+img #groovebox-music {
+  grid-area: groovebox-music;
+}
+
+img #midi {
+  grid-area: midi;
+}
+
+.trending-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.trending-user{
+  margin-bottom: 0;
+  margin-top: 0;
+
+}
+
+.trending-project {
+  margin-top: 0;
+  color: rgba(0, 0, 0, 0.579);
 }
