@@ -8,7 +8,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 10fr;
+  grid-template-rows: 1fr 8fr;
   grid-template-areas: 
   "sidebar header"
   "sidbar main-content";
@@ -25,6 +25,7 @@ body {
   border-radius: 3px;
   padding-left: 40px;
   padding-right: 40px;
+  padding-bottom: 20px;
   }
 
 .sidebar {
@@ -42,7 +43,16 @@ body {
 .main-content {
   grid-area: main-content;
   background-color: #3f621220;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 25fr;
+  grid-template-areas: 
+  "projects-header announcements-header"
+  "projects aside";
+  gap: 20px;
+  padding: 20px;
 }
+
 
 .search-bar {
   grid-area: search-bar;
@@ -199,4 +209,71 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.project-cards {
+  grid-area: projects;
+  display: grid;
+  grid-template-columns: repeat(2 , 1fr);
+  max-height: 800px;
+  gap: 20px;
+}
+
+.cards {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.content-interactions {
+  display: flex;
+  gap: 10px;
+}
+
+.content-interactions li {
+  list-style: none;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+#projects-header {
+  grid-area: projects-header;
+  align-self: end;
+  margin-bottom: 0;
+}
+
+#announcements-header {
+  grid-area: announcements-header;
+  align-self: end;
+  margin-bottom: 0;
+}
+
+.announcements {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.announcements-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  list-style: none;
+  margin-top: 0;
+  max-height: 400px;
+}
+
+#announcement-one ,
+#announcement-two {
+  border-bottom:1px solid #00000048;
+}
+
+.announcements-card li h4 {
+  margin-bottom: 0;
+}
+
+.announcements-card li p {
+  margin-top: 0;
 }
