@@ -50,7 +50,7 @@ body {
   "projects-header announcements-header"
   "projects aside";
   gap: 20px;
-  padding: 20px;
+  padding: 30px;
 }
 
 
@@ -216,18 +216,20 @@ h1 {
   display: grid;
   grid-template-columns: repeat(2 , 1fr);
   max-height: 800px;
-  gap: 20px;
+  gap: 30px;
 }
 
 .cards {
   background-color: white;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: -7px 0px #b70c0cca;
 }
 
 .content-interactions {
   display: flex;
   gap: 10px;
+  justify-content: end;
 }
 
 .content-interactions li {
