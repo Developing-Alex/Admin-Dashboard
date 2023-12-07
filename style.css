@@ -7,8 +7,8 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 8fr;
+  grid-template-columns: 1fr 3.75fr;
+  grid-template-rows: 1fr 9fr;
   grid-template-areas: 
   "sidebar header"
   "sidbar main-content";
@@ -21,11 +21,12 @@ body {
   grid-template-areas: 
   "search-bar notification"
   "user share-interactions";
-  box-shadow: 0 4px 3px -2px rgba(128, 128, 128, 0.302);
-  border-radius: 3px;
-  padding-left: 40px;
-  padding-right: 40px;
+  border-radius: 1px;
+  padding-left: 80px;
+  padding-right: 80px;
   padding-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 4px 10px -2px rgba(128, 128, 128, 0.444);
   }
 
 .sidebar {
@@ -42,15 +43,19 @@ body {
 
 .main-content {
   grid-area: main-content;
-  background-color: #3f621220;
+  background-color: #dde2d5;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.main-content-container {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 25fr;
   grid-template-areas: 
-  "projects-header announcements-header"
-  "projects aside";
+  "project-cards aside";
   gap: 20px;
-  padding: 30px;
+  background-color: #dde2d5;
 }
 
 
@@ -62,11 +67,11 @@ body {
 }
 
 #search {
-  border-radius: 15px;
-  background-color: #3f621220;
+  border-radius: 25px;
+  background-color: #dde2d5;
   border: none;
-  width: 640px;
-  height: 32px;
+  width: 800px;
+  height: 42px;
 }
 
 .notification {
@@ -77,15 +82,14 @@ body {
   gap: 30px;
 }
 
-.notification p {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
 .greet-user {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#hello {
+  margin-top: 0;
 }
 
 .user {
@@ -95,18 +99,9 @@ body {
   gap: 20px;
 }
 
-#username {
-  margin: 0;
-}
-
-#hello {
-  margin: 0;
-  font-weight: bold;
-}
-
 #user-avatar1 {
   border-radius: 50px;
-  width: 50px;
+  width: 65px;
 }
 
 .share-interactions {
@@ -127,18 +122,18 @@ body {
 }
 
 .share-interactions ul li button {
-  width: 110px;
-  height: 40px;
-  border-radius: 20px;
+  width: 125px;
+  height: 50px;
+  border-radius: 25px;
   border: none;
-  background-color: #3f621220;
+  background-color: #dde2d5;
 }
 
 .share-interactions ul li a {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.22rem;
 }
 
 #message-bubble {
@@ -147,11 +142,30 @@ body {
 
 #user-avatar2 {
   border-radius: 50px;
-  height: 75px;
+  height: 90px;
 }
 
 h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
   font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  margin-bottom: 0;
+  font-size: 1.075rem;
 }
 
 #sidebar-heading {
@@ -191,7 +205,7 @@ h1 {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
 }
 
 .nav ul li {
@@ -211,62 +225,82 @@ h1 {
   gap: 20px;
 }
 
-.project-cards {
-  grid-area: projects;
+.main-content-headers {
+  grid-area: main-content-headers;
+  grid-column: 1 / 5;
   display: grid;
-  grid-template-columns: repeat(2 , 1fr);
-  max-height: 800px;
+  grid-template-columns: repeat(4 , 1fr);
+  max-height: 150px;
+  gap: 20px;
+}
+
+.project-cards {
+  grid-area: project-cards;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3 , 1fr);
+  min-height: 900px;
   gap: 30px;
 }
 
 .cards {
   background-color: white;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: -7px 0px #b70c0cca;
+  border-radius: 8px;
+  box-shadow: -7px 0px 0px #b70c0cca , 0 4px 10px -2px rgba(128, 128, 128, 0.444), 5px 0 5px -5px rgba(128, 128, 128, 0.444);
+}
+
+.cards h4 {
+  margin-bottom: 0;
+}
+
+.cards p {
+  color: rgba(0, 0, 0, 0.579);
+  font-size: 1.2rem;
+  margin-top: 0;
 }
 
 .content-interactions {
   display: flex;
-  gap: 10px;
+  gap: 40px;
   justify-content: end;
+  margin-bottom: 0;
+  margin-top: 32px;
+  padding-right: 20px;
 }
 
 .content-interactions li {
   list-style: none;
 }
 
+.content-interactions li img {
+  width: 30px;
+}
+
 .aside {
-  display: flex;
-  flex-direction: column;
   grid-area: aside;
-}
-
-#projects-header {
-  grid-area: projects-header;
-  align-self: end;
-  margin-bottom: 0;
-}
-
-#announcements-header {
-  grid-area: announcements-header;
-  align-self: end;
-  margin-bottom: 0;
+  grid-row: 2;
+  min-height: 900px;
 }
 
 .announcements {
-  display: flex;
-  flex-direction: column;
+  grid-area: announcements;
   gap: 20px;
+}
+
+#announcements-header {
+  grid-column: 4;
 }
 
 .announcements-card {
   background-color: white;
-  border-radius: 10px;
-  padding: 20px;
+  box-shadow: 0 4px 10px -2px rgba(128, 128, 128, 0.444) , 5px 0 5px -5px rgba(128, 128, 128, 0.444);
+  border-radius: 8px;
+  padding: 20px 40px;
   list-style: none;
   margin-top: 0;
-  max-height: 400px;
+
 }
 
 #announcement-one ,
@@ -274,61 +308,93 @@ h1 {
   border-bottom:1px solid #00000048;
 }
 
-.announcements-card li h4 {
-  margin-bottom: 0;
-}
-
 .announcements-card li p {
   margin-top: 0;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.579);
+}
+
+#trending-header {
+  grid-area: trending-header;
+  align-self: end;
+  margin-bottom: 15px;
+  margin-top: 35px;
 }
 
 .trending {
+  grid-area: trending;
   display: grid;
   grid-template-areas: 
-  "drum-machine ."
-  "groovebox-sampler ."
-  "groovebox-music ."
-  "midi .";
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: repeat(4 , 1fr);
+  "drum-machine naz"
+  "groovebox-sampler jayden"
+  "groovebox-music ant"
+  "midi kat";
+  grid-template-columns: 1fr 3fr;
   background-color: white;
+  box-shadow: 0 4px 10px -2px rgba(128, 128, 128, 0.444) , 5px 0 5px -5px rgba(128, 128, 128, 0.444);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 8px;
+  align-items: center;
 }
 
 .music-boxes {
-  border-radius: 25px;
+  border-radius: 100%;
+  justify-self: center;
 }
 
-img #drum-machine {
+#drum-machine {
   grid-area: drum-machine;
+  width: 65px;
 }
 
-img #groovebox-sampler {
+#groovebox-sampler {
   grid-area: groovebox-sampler;
+  width: 65px;
 }
 
-img #groovebox-music {
+#groovebox-music {
   grid-area: groovebox-music;
+  width: 65px;
 }
 
-img #midi {
+#midi {
   grid-area: midi;
+  width: 65px;
+}
+
+#naz {
+  grid-area: naz;
+}
+
+#jayden {
+  grid-area: jayden;
+}
+
+#ant {
+  grid-area: ant;
+}
+
+#kat {
+  grid-area: kat;
 }
 
 .trending-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
+  font-size: 1.075rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
+
 
 .trending-user{
   margin-bottom: 0;
   margin-top: 0;
-
 }
 
 .trending-project {
-  margin-top: 0;
+  margin: 0;
   color: rgba(0, 0, 0, 0.579);
 }
